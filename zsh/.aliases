@@ -2,10 +2,16 @@
 alias gl='ggpull'
 alias gp='ggpush'
 
+# For Redshift comfort view
+alias rs29='redshift -t 2900:2900'
+
 # Custom rails command
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
+
+# git commands
+alias gadd='git add .'
+alias gcom='git commit -am'
 
 # Heroku psql backups commands
 alias hdb_cap='heroku pg:backups:capture'
 alias hdb_dl='heroku pg:backups:download'
-alias rs29='redshift -t 2900:2900'
