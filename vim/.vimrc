@@ -109,7 +109,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme molokai
+colorscheme molokai 
 set background=dark
 
 " vim-matchup config

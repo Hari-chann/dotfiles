@@ -12,6 +12,9 @@ alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
 alias gadd='git add .'
 alias gcom='git commit -am'
 
-# Heroku psql backups commands
+# Heroku commands
+alias hrun='heroku run '
+alias hlogs='heroku logs --tail'
+alias hrailsc='heroku run rails c'
 alias hdb_cap='heroku pg:backups:capture'
 alias hdb_dl='heroku pg:backups:download'
