@@ -1,0 +1,11 @@
+# Monkey patch oh-my-zsh alias
+alias gl='ggpull'
+alias gp='ggpush'
+
+# Custom rails command
+alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
+
+# Heroku psql backups commands
+alias hdb_cap='heroku pg:backups:capture'
+alias hdb_dl='heroku pg:backups:download'
+alias rs29='redshift -t 2900:2900'
