@@ -7,6 +7,13 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+# Install plug by :PlugInstall
+# Plug url is after 'github.com/'
+# to Remove plug
+  # delete the plug line 
+  # source .vimrc
+  # then run :PlugClean, choose yes to delete directories 
+
 Plug 'andymass/vim-matchup'
 Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -24,7 +31,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'mhartington/oceanic-next'
-
+Plug 'trusktr/seti.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'sainnhe/sonokai'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -61,7 +72,7 @@ function! GetCWD()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'ayu_mirage',
+      \ 'colorscheme': 'sonokai',
        \ 'active': {
        \   'left': [ [ 'mode',  'paste', 'gitbranch' ],
        \             [ 'readonly', 'filepath', 'modified' ] ],
@@ -80,6 +91,8 @@ let g:lightline = {
        \   'cwd': 'GetCWD'
        \ }
       \ }
+
+let g:sonokai_style = 'atlantis'
 
 " vim window navigation
 nnoremap <C-h> <C-w>h
@@ -109,12 +122,13 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme molokai 
+colorscheme sonokai 
 set background=dark
 
 " vim-matchup config
 let g:matchup_matchparen_deferred = 1
 let g:matchup_matchparen_hi_surround_always = 1
+let g:javascript_plugin_flow = 1
 
 hi MatchParen ctermfg=11
 hi MatchParen guifg=darkyellow
@@ -122,6 +136,7 @@ hi MatchParen guifg=darkyellow
 " Set vim's bg to transparent so that it adapts to
 " current terminal's bg color.
 " hi normal ctermbg=NONE
+
 
 " Search through methods in current file using tags
 function! s:align_lists(lists)
