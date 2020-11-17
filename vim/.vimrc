@@ -5,14 +5,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+" Install plug by :PlugInstall
+" Plug url is after 'github.com/'
+" to Remove plug
+"   delete the plug line 
+"   source .vimrc
+"   then run :PlugClean, choose yes to delete directories 
 
-# Install plug by :PlugInstall
-# Plug url is after 'github.com/'
-# to Remove plug
-  # delete the plug line 
-  # source .vimrc
-  # then run :PlugClean, choose yes to delete directories 
+call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
 Plug 'dense-analysis/ale'
@@ -30,12 +30,11 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-Plug 'mhartington/oceanic-next'
-Plug 'trusktr/seti.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'sainnhe/sonokai'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'jacoborus/tender.vim'
+Plug 'srcery-colors/srcery-vim'
+Plug 'ghifarit53/tokyonight-vim'
+
 
 call plug#end()
 
@@ -72,7 +71,7 @@ function! GetCWD()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'sonokai',
+      \ 'colorscheme': 'tokyonight',
        \ 'active': {
        \   'left': [ [ 'mode',  'paste', 'gitbranch' ],
        \             [ 'readonly', 'filepath', 'modified' ] ],
@@ -93,6 +92,9 @@ let g:lightline = {
       \ }
 
 let g:sonokai_style = 'atlantis'
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
 
 " vim window navigation
 nnoremap <C-h> <C-w>h
@@ -109,6 +111,9 @@ nnoremap <silent> <CR> :nohlsearch<CR>
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
 
+" disabled C-Z suspending vim / tmux
+nnoremap <c-z> <nop>
+
 " fzf config
 nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp,sorbet,flow-typed}'"
@@ -117,12 +122,13 @@ let $FZF_DEFAULT_OPTS = "--color bg+:-1,hl:107,hl+:114,fg:245,fg+:255"
 nnoremap <C-f> :Rg<Space>
 
 syntax on
+set t_Co=256
 " set up truecolors
 if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme sonokai 
+colorscheme tokyonight 
 set background=dark
 
 " vim-matchup config
@@ -195,7 +201,10 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop']
 \}
 
-" Bind F8 to fixing problems with ALE
+au FocusLost,WinLeave * :silent! w " Saves when exiting the buffer or losing focus
+"au FocusGained,BufEnter * :silent! ! " reloads file when entering the buffer or gaining focus
+
+"Bind F8 to fixing problems with ALE
 nnoremap <F8> :ALEFix<CR>
 
 " Bind F5 to source vimrc
