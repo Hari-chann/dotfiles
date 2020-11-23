@@ -8,6 +8,9 @@ alias rs29='redshift -t 2900:2900'
 # Custom rails command
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
 
+# temp files delete for rails proj
+alias deltmp='sudo rm -rf tmp && rm -rf log'
+
 # git commands
 alias gadd='git add .'
 alias gcom='git commit -am'
@@ -18,3 +21,11 @@ alias hlogs='heroku logs --tail'
 alias hrailsc='heroku run rails c'
 alias hdb_cap='heroku pg:backups:capture'
 alias hdb_dl='heroku pg:backups:download'
+alias hmaintain_on='heroku maintenance:on'
+alias hmaintain_off='heroku maintenance:off'
+
+# Postgres commands
+alias run_psql='sudo -i -u postgres psql'
+alias pg_res='pg_restore -h localhost -U rails -d'
+alias ajb_dump_mv='mv ~/ajb/latest.dump ~/test'
+

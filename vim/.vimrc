@@ -108,9 +108,12 @@ nnoremap <silent> <C-w>} :exec ':vert stjump' expand('<cword>')<CR>
 " Hide highlighting of current search results
 nnoremap <silent> <CR> :nohlsearch<CR>
 
-" nerdtree config
+"## nerdtree config ##
+" Toggle NERDTree show
 map <C-n> :NERDTreeToggle<CR>
 
+"Open current file directory
+map <C-o> :NERDTreeToggle %<CR>
 " disabled C-Z suspending vim / tmux
 nnoremap <c-z> <nop>
 

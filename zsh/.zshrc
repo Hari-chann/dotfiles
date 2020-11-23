@@ -124,6 +124,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH"
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/Cellar/ripgrep/12.1.1/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
