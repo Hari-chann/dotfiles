@@ -2,8 +2,12 @@
 alias gl='ggpull'
 alias gp='ggpush'
 
+# For tmux resume
+alias resume_tmux='tmux a -d || tmux'
+
 # For Redshift comfort view
 alias rs29='redshift -t 2900:2900'
+alias rskill='killall redshift'
 
 # Custom rails command
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
@@ -21,8 +25,8 @@ alias hlogs='heroku logs --tail'
 alias hrailsc='heroku run rails c'
 alias hdb_cap='heroku pg:backups:capture'
 alias hdb_dl='heroku pg:backups:download'
-alias hmaintain_on='heroku maintenance:on'
-alias hmaintain_off='heroku maintenance:off'
+alias hm_on='heroku maintenance:on'
+alias hm_off='heroku maintenance:off'
 
 # Postgres commands
 alias run_psql='sudo -i -u postgres psql'
