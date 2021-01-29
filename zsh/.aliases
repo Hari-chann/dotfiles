@@ -13,7 +13,9 @@ alias rskill='killall redshift'
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
 
 # temp files delete for rails proj
-alias deltmp='sudo rm -rf tmp && rm -rf log'
+alias deltmp='sudo rm -rf tmp && rm -rf log && rm latest.dump'
+# move latest dump then provide destination  
+alias mv_ldb='mv latest.dump '
 
 # git commands
 alias gadd='git add .'
