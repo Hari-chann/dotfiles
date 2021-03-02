@@ -2,6 +2,9 @@
 alias gl='ggpull'
 alias gp='ggpush'
 
+# HDD Home proj directory
+alias cd_proj='cd "/media/yanagi/Home/Ubuntu Files/proj"'
+
 # For tmux resume
 alias resume_tmux='tmux a -d || tmux'
 
@@ -13,7 +16,7 @@ alias rskill='killall redshift'
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
 
 # temp files delete for rails proj
-alias deltmp='sudo rm -rf tmp && rm -rf log && rm latest.dump'
+alias deltmp='sudo rm -rf tmp && rm -rf log && rm latest.dump  && rm .byebug_history && rm .directory'
 # move latest dump then provide destination  
 alias mv_ldb='mv latest.dump '
 
@@ -33,5 +36,5 @@ alias hm_off='heroku maintenance:off'
 # Postgres commands
 alias run_psql='sudo -i -u postgres psql'
 alias pg_res='pg_restore -h localhost -U rails -d'
-alias ajb_dump_mv='mv ~/ajb/latest.dump ~/test'
+alias ajb_dump_mv='mv "/media/yanagi/Home/Ubuntu Files/proj/ajb/latest.dump" "/media/yanagi/Home/Ubuntu Files/proj/test"'
 
