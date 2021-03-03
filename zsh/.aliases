@@ -23,6 +23,7 @@ alias mv_ldb='mv latest.dump '
 # git commands
 alias gadd='git add .'
 alias gcom='git commit -am'
+alias gout='git checkout'
 
 # Heroku commands
 alias hrun='heroku run '
